@@ -13,6 +13,7 @@ const port = 3000;
 
 let filmRouter = require('./routers/filmRouter');
 let userRouter = require('./routers/userRouter');
+let orderRouter = require('./routers/orderRouter');
 
 //Middlewares
 
@@ -25,6 +26,13 @@ app.use('/film', filmRouter);
 
 //Enrutador de usuarios con el recurso /user
 app.use('/user', userRouter);
+
+
+//Enrutador de pedidos con el recurso /pedido
+
+app.use('/pedido', orderRouter);
+
+//http://localhost:3000/pedido/alquilar
 
 //Levantamos el servidor
 

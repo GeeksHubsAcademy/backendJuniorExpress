@@ -1,7 +1,6 @@
 
 class Film {
 
-
     constructor(id, title, year, description, image, genre, adult){
         this.title = title,
         this.id = id,
@@ -11,14 +10,6 @@ class Film {
         this.genre = genre,
         this.adult = adult
     }
-
-
-    //Métodos (funciones) de la clase
-
-    // async bringMeTheMovies(){
-
-    // }
-
 
 }
 
