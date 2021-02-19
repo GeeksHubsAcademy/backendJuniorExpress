@@ -9,22 +9,14 @@ let database = new filmDatabase();
 
 class FilmController {
     
-    
-
     constructor(){
         // this.database = new filmDatabase();
     }
 
+    //Métodos del controlador
 
-    //MÉTODOS CRUD 
-
-
-    //CREATE -C- Dar un alta
-
-    async createFilm(req,res){
+    async createFilm(body){
         
-        let body = req.body;
-
         try {
             
             let film = new filmModel(body.id,body.title,body.year,body.description,body.image,body.genre,body.adult);
@@ -45,7 +37,7 @@ class FilmController {
 
     //READ -R- Traernos datos
 
-    async bringFilms(req,res){
+    async bringFilms(){
         try {
             let getting = await database.get();
 
@@ -56,12 +48,6 @@ class FilmController {
             console.log(error)
         }
     }
-
-    //UPDATE -U- Modificar datos
-
-    
-
-    //DELETE -D- Borrar datos
 
 }
 

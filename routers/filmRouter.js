@@ -1,20 +1,23 @@
 
+//Requerimos el Router de express
 const router = require('express').Router();
-
-
 //Requerimos el controlador 
 const filmController = require('../controllers/filmController');
 
-
-//CREACION DE LOS ENDPOINTS
+//ENDPOINTS CRUD
 
 //Endpoint para guardar una película
 
-router.post('/saveFilm', filmController.createFilm);
+router.post('/saveFilm', async (req,res)=>{
+    const body = req.body;
+    res.json(await filmController.createFilm(body))
+});
 
 //Endpoint para traer las películas
 
-router.get('/allFilms', filmController.bringFilms)
+router.get('/allFilms', async (req,res)=>{
+    res.json(await filmController.bringFilms)
+});
 
 
 module.exports = router;
